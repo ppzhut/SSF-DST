@@ -10,12 +10,8 @@ np.set_printoptions(suppress=True)
 import os
 import time
 import torch
-from sklearn.preprocessing import scale
-from scipy.interpolate import griddata
-from scipy.io import loadmat
 current_path = os.path.dirname(os.path.abspath(__file__))
 
-import torch.nn.functional as F
 
 def makePath(path):
     if not os.path.isdir(path):

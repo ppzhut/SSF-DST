@@ -194,11 +194,9 @@ if __name__ == "__main__":
         process.append(p)
         monitor(process, multiple, 60)
     
-    # 等待所有进程完成
     for p in process:
         p.join()
     
-    # 收集所有结果
     losses = []
     accs = []
     while not result_queue.empty():
@@ -206,9 +204,8 @@ if __name__ == "__main__":
         losses.append(loss)
         accs.append(acc*100)
     
-    # 计算平均acc
     avg_acc = sum(accs) / len(accs)
-    # 计算acc标准差
+
     var_acc = np.std(accs)
     print(f"Average Accuracy: {avg_acc}")
     print(f"Variance of Accuracy: {var_acc}")
