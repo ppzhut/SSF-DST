@@ -143,12 +143,8 @@ def train_model(settings, args, train_loader, valid_loader, test_loader, subject
     print(f"Subject: {subject}, Acc: {test_acc:.2f}")
 
     return test_loss, test_acc
-
-
-import logging
-import os
+    
 from multiprocessing import Process, Queue
-from dotmap import DotMap
 
 def main(name="S1", time_len=1, dataset="DTU", result_queue=None):
     setup_seed(42)
